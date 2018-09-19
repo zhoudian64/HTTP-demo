@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "author": "AdrianDuan <adrianduan@icloud.com>",
   "description": "An electron-vue project",
-  "license": null,
+  "license": "MIT",
   "main": "./dist/electron/main.js",
   "scripts": {
     "build": "node .electron-vue/build.js && electron-builder",
@@ -53,6 +53,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "element-ui": "^2.4.7",
+    "node-forge": "^0.7.6",
     "vue": "^2.5.16",
     "vue-electron": "^1.0.6",
     "vue-router": "^3.0.1",

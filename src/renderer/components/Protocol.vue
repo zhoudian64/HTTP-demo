@@ -117,6 +117,7 @@ export default {
       console.log(headers);
       const url = this.url;
       const req = this.requestBody;
+      this.$parent.setLoading();
       switch (this.method) {
         case "get":
           this.$http
@@ -126,13 +127,18 @@ export default {
             .then(res => {
               console.log(res);
               this.resposeHeaders = res.headers;
-              this.responseBody = String(res.data);
+              if (typeof res.data == "object") {
+                this.responseBody = JSON.stringify(res.data);
+              } else this.responseBody = String(res.data);
+              this.$parent.setLoading();
             })
             .catch(err => {
               this.$message({
-                message: err.response.status + " " + err.response.statusText,
+                message:
+                  err.response.status + " " + err.response.statusText || err,
                 type: "error"
               });
+              this.$parent.setLoading();
             });
           break;
 
@@ -144,13 +150,18 @@ export default {
             .then(res => {
               console.log(res);
               this.resposeHeaders = res.headers;
-              this.responseBody = res.data.data;
+              if (typeof res.data == "object") {
+                this.responseBody = JSON.stringify(res.data);
+              } else this.responseBody = String(res.data);
+              this.$parent.setLoading();
             })
             .catch(err => {
               this.$message({
-                message: err.response.status + " " + err.response.statusText,
+                message:
+                  err.response.status + " " + err.response.statusText || err,
                 type: "error"
               });
+              this.$parent.setLoading();
             });
           break;
 
@@ -162,13 +173,18 @@ export default {
             .then(res => {
               console.log(res);
               this.resposeHeaders = res.headers;
-              this.responseBody = res.data.data;
+              if (typeof res.data == "object") {
+                this.responseBody = JSON.stringify(res.data);
+              } else this.responseBody = String(res.data);
+              this.$parent.setLoading();
             })
             .catch(err => {
               this.$message({
-                message: err.response.status + " " + err.response.statusText,
+                message:
+                  err.response.status + " " + err.response.statusText || err,
                 type: "error"
               });
+              this.$parent.setLoading();
             });
           break;
 
@@ -180,13 +196,18 @@ export default {
             .then(res => {
               console.log(res);
               this.resposeHeaders = res.headers;
-              this.responseBody = String(res.data);
+              if (typeof res.data == "object") {
+                this.responseBody = JSON.stringify(res.data);
+              } else this.responseBody = String(res.data);
+              this.$parent.setLoading();
             })
             .catch(err => {
               this.$message({
-                message: err.response.status + " " + err.response.statusText,
+                message:
+                  err.response.status + " " + err.response.statusText || err,
                 type: "error"
               });
+              this.$parent.setLoading();
             });
           break;
 

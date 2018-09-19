@@ -1,12 +1,17 @@
 <template lang="pug">
-  div#app
+  div#app(v-loading="loading")
     main#wrapper
       router-view
 </template>
 
 <script>
 export default {
-  name: "http-demo"
+  data: () => ({ loading: false }),
+  methods: {
+    setLoading() {
+      this.loading = !this.loading;
+    }
+  }
 };
 </script>
 
@@ -36,5 +41,9 @@ body {
   min-height: 100vh;
   width: 100vw;
   padding: 20px;
+}
+
+.center {
+  text-align: center;
 }
 </style>

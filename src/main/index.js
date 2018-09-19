@@ -21,7 +21,7 @@ function createWindow() {
     height: 800,
     useContentSize: true,
     width: 1300,
-    webPreferences: { webSecurity: false }
+    webPreferences: { webSecurity: false },
   });
 
   mainWindow.loadURL(winURL);
